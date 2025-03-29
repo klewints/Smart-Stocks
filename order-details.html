@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Details</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 p-6">
+
+    <div class="max-w-3xl mx-auto bg-white p-6 rounded-lg shadow-lg">
+        <h2 class="text-2xl font-bold text-center text-teal-600 mb-4">Order Details</h2>
+
+        <div id="order-info" class="p-4 border rounded-lg shadow-md">
+            <!-- Order details will be dynamically inserted here -->
+        </div>
+
+        <div class="mt-6 text-center">
+            <a href="trackorders.html" class="bg-gray-500 text-white px-4 py-2 rounded-lg shadow-md hover:bg-gray-700">Back to Orders</a>
+        </div>
+    </div>
+
+    <script>
+        // Sample order details
+        const orders = {
+            "1": {
+                orderId: "ORD12345",
+                product: "Basmati Rice",
+                quantity: "5,000 kg",
+                deliveryStatus: "In Transit",
+                estimatedArrival: "5 Days",
+                buyer: "Rahul Traders, West Bengal",
+                contact: "+91 98765 43210"
+            },
+            "2": {
+                orderId: "ORD67890",
+                product: "Turmeric Powder",
+                quantity: "3,000 kg",
+                deliveryStatus: "Delivered",
+                estimatedArrival: "Already Delivered",
+                buyer: "Agarwal Wholesalers, Delhi",
+                contact: "+91 98234 56789"
+            },
+            "3": {
+                orderId: "ORD54321",
+                product: "Mustard Oil",
+                quantity: "2,500 liters",
+                deliveryStatus: "Delayed",
+                estimatedArrival: "10 Days",
+                buyer: "Singh Enterprises, Punjab",
+                contact: "+91 98123 45678"
+            }
+        };
+
+        // Get order ID from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const orderId = urlParams.get('id');
+
+        // Display the relevant order details
+        const orderInfoDiv = document.getElementById("order-info");
+        if (orders[orderId]) {
+            const order = orders[orderId];
+            orderInfoDiv.innerHTML = `
+                <p><strong>Order ID:</strong> ${order.orderId}</p>
+                <p><strong>Product:</strong> ${order.product}</p>
+                <p><strong>Quantity:</strong> ${order.quantity}</p>
+                <p><strong>Delivery Status:</strong> ${order.deliveryStatus}</p>
+                <p><strong>Estimated Arrival:</strong> ${order.estimatedArrival}</p>
+                <p><strong>Buyer:</strong> ${order.buyer}</p>
+                <p><strong>Contact:</strong> ${order.contact}</p>
+            `;
+        } else {
+            orderInfoDiv.innerHTML = `<p class="text-red-500">Invalid Order</p>`;
+        }
+    </script>
+     <footer class="bg-teal-700 text-white text-center p-4 mt-6 shadow-md">
+        <p class="text-lg">&copy; 2025 Smart Stocks. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

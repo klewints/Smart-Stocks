@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Management - Smart Stocks</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        function restockItem(item) {
+            const popup = document.createElement('div');
+            popup.className = "fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-green-500 text-white p-4 rounded-lg shadow-lg text-xl font-semibold flex items-center";
+            popup.innerHTML = `<span class='mr-2'>✔</span> ${item} Restock Requested!`;
+            document.body.appendChild(popup);
+            setTimeout(() => popup.remove(), 2000);
+        }
+    </script>
+</head>
+<body class="bg-gray-50 p-6">
+    <h1 class="text-3xl font-bold text-center mb-6">Inventory Management</h1>
+    <div class="grid grid-cols-3 gap-6">
+        <!-- Spices -->
+        <div class="bg-white p-4 shadow-lg rounded-lg text-center">
+            <h2 class="text-xl font-semibold">Gram Flour</h2>
+            <p class="text-gray-600">Supplier: Chakki Traders</p>
+            <p class="text-gray-700 font-bold">Stock: 30 kg</p>
+            <button onclick="restockItem('Gram Flour')" class="mt-3 px-4 py-2 bg-green-600 text-white rounded-lg">Restock</button>
+        </div>
+        <div class="bg-white p-4 shadow-lg rounded-lg text-center">
+            <h2 class="text-xl font-semibold">Rice Flour</h2>
+            <p class="text-gray-600">Supplier: Ganpati Enterprises Ltd.</p>
+            <p class="text-gray-700 font-bold">Stock: 40 kg</p>
+            <button onclick="restockItem('Rice Flour')" class="mt-3 px-4 py-2 bg-green-600 text-white rounded-lg">Restock</button>
+        </div>
+        <div class="bg-white p-4 shadow-lg rounded-lg text-center">
+            <h2 class="text-xl font-semibold">Refined Wheat Flour (Maida)</h2>
+            <p class="text-gray-600">Supplier: Chakki Traders</p>
+            <p class="text-gray-700 font-bold">Stock: 50 kg</p>
+            <button onclick="restockItem('Refined Wheat Flour')" class="mt-3 px-4 py-2 bg-green-600 text-white rounded-lg">Restock</button>
+        </div>
+        <div class="bg-white p-4 shadow-lg rounded-lg text-center">
+            <h2 class="text-xl font-semibold">Turmeric Powder</h2>
+            <p class="text-gray-600">Supplier: Ganpati Enterprises Ltd.</p>
+            <p class="text-gray-700 font-bold">Stock: 20 kg</p>
+            <button onclick="restockItem('Turmeric Powder')" class="mt-3 px-4 py-2 bg-green-600 text-white rounded-lg">Restock</button>
+        </div>
+        <div class="bg-white p-4 shadow-lg rounded-lg text-center">
+            <h2 class="text-xl font-semibold">Red Chili Powder</h2>
+            <p class="text-gray-600">Supplier: Spices World</p>
+            <p class="text-gray-700 font-bold">Stock: 15 kg</p>
+            <button onclick="restockItem('Red Chili Powder')" class="mt-3 px-4 py-2 bg-green-600 text-white rounded-lg">Restock</button>
+        </div>
+        <div class="bg-white p-4 shadow-lg rounded-lg text-center">
+            <h2 class="text-xl font-semibold">Coriander Powder</h2>
+            <p class="text-gray-600">Supplier: Spice Mart</p>
+            <p class="text-gray-700 font-bold">Stock: 10 kg</p>
+            <button onclick="restockItem('Coriander Powder')" class="mt-3 px-4 py-2 bg-green-600 text-white rounded-lg">Restock</button>
+        </div>
+        <div class="bg-white p-4 shadow-lg rounded-lg text-center">
+            <h2 class="text-xl font-semibold">Cumin Seeds</h2>
+            <p class="text-gray-600">Supplier: Spice Traders</p>
+            <p class="text-gray-700 font-bold">Stock: 8 kg</p>
+            <button onclick="restockItem('Cumin Seeds')" class="mt-3 px-4 py-2 bg-green-600 text-white rounded-lg">Restock</button>
+        </div>
+        <div class="bg-white p-4 shadow-lg rounded-lg text-center">
+            <h2 class="text-xl font-semibold">Black Pepper</h2>
+            <p class="text-gray-600">Supplier: Masala Bazaar</p>
+            <p class="text-gray-700 font-bold">Stock: 5 kg</p>
+            <button onclick="restockItem('Black Pepper')" class="mt-3 px-4 py-2 bg-green-600 text-white rounded-lg">Restock</button>
+        </div>
+        <div class="bg-white p-4 shadow-lg rounded-lg text-center">
+            <h2 class="text-xl font-semibold">Cloves</h2>
+            <p class="text-gray-600">Supplier: Spices Hub</p>
+            <p class="text-gray-700 font-bold">Stock: 3 kg</p>
+            <button onclick="restockItem('Cloves')" class="mt-3 px-4 py-2 bg-green-600 text-white rounded-lg">Restock</button>
+        </div>
+        <div class="bg-white p-4 shadow-lg rounded-lg text-center">
+            <h2 class="text-xl font-semibold">Cardamom</h2>
+            <p class="text-gray-600">Supplier: Kerala Spices</p>
+            <p class="text-gray-700 font-bold">Stock: 2 kg</p>
+            <button onclick="restockItem('Cardamom')" class="mt-3 px-4 py-2 bg-green-600 text-white rounded-lg">Restock</button>
+        </div>
+        <div class="bg-white p-4 shadow-lg rounded-lg text-center">
+            <h2 class="text-xl font-semibold">Cinnamon</h2>
+            <p class="text-gray-600">Supplier: Spice House</p>
+            <p class="text-gray-700 font-bold">Stock: 4 kg</p>
+            <button onclick="restockItem('Cinnamon')" class="mt-3 px-4 py-2 bg-green-600 text-white rounded-lg">Restock</button>
+        </div>
+        <!-- Oils -->
+        <div class="bg-white p-4 shadow-lg rounded-lg text-center">
+            <h2 class="text-xl font-semibold">Mustard Oil</h2>
+            <p class="text-gray-600">Supplier: Ganpati Enterprises Ltd.</p>
+            <p class="text-gray-700 font-bold">Stock: 50 L</p>
+            <button onclick="restockItem('Mustard Oil')" class="mt-3 px-4 py-2 bg-green-600 text-white rounded-lg">Restock</button>
+        </div>
+        <div class="bg-white p-4 shadow-lg rounded-lg text-center">
+            <h2 class="text-xl font-semibold">Sunflower Oil</h2>
+            <p class="text-gray-600">Supplier: Agro Oils Ltd.</p>
+            <p class="text-gray-700 font-bold">Stock: 40 L</p>
+            <button onclick="restockItem('Sunflower Oil')" class="mt-3 px-4 py-2 bg-green-600 text-white rounded-lg">Restock</button>
+        </div>
+        <div class="bg-white p-4 shadow-lg rounded-lg text-center">
+            <h2 class="text-xl font-semibold">Coconut Oil</h2>
+            <p class="text-gray-600">Supplier: Kerala Naturals</p>
+            <p class="text-gray-700 font-bold">Stock: 30 L</p>
+            <button onclick="restockItem('Coconut Oil')" class="mt-3 px-4 py-2 bg-green-600 text-white rounded-lg">Restock</button>
+        </div>
+        <div class="bg-white p-4 shadow-lg rounded-lg text-center">
+            <h2 class="text-xl font-semibold">Groundnut Oil</h2>
+            <p class="text-gray-600">Supplier: Organic Oils</p>
+            <p class="text-gray-700 font-bold">Stock: 20 L</p>
+            <button onclick="restockItem('Groundnut Oil')" class="mt-3 px-4 py-2 bg-green-600 text-white rounded-lg">Restock</button>
+        </div>
+    </div>
+    <footer class="bg-teal-700 text-white text-center p-4 mt-6 shadow-md">
+        <p class="text-lg">&copy; 2025 Smart Stocks. All rights reserved.</p>
+    </footer>
+</body>
+</html>

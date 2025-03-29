@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Stocks - Vendor Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50">
+    <!-- Navbar -->
+    <nav class="bg-teal-700 text-white p-4 flex justify-between items-center shadow-lg">
+        <h1 class="text-2xl font-extrabold">Smart Stocks</h1>
+        <div class="flex space-x-4 items-center">
+            <span class="text-lg">West Bengal, India</span>
+            <span class="cursor-pointer text-xl">▼</span>
+            <input type="text" placeholder="Search..." class="p-2 rounded-md text-black border border-gray-300">
+            <span class="cursor-pointer text-xl" onclick="location.href='messages.html'">🔔</span>
+            <span class="cursor-pointer text-xl" onclick="location.href='profile.html'">👤</span>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <section class="p-10 text-center bg-white shadow-md rounded-lg m-6">
+        <h2 class="text-4xl font-extrabold">Welcome, Vendor!</h2>
+        <p class="text-gray-600 text-lg">Seamlessly manage your suppliers, track inventory, and reorder raw materials with ease.</p>
+        <div class="mt-6 inline-block relative">
+            <select class="block appearance-none w-full bg-teal-700 border border-gray-300 text-white py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:border-gray-500">
+                <option selected>Business Sector: Grains, Spices, and Oils</option>
+                <option>🥦 Fresh Groceries</option>
+                <option>🌾 Grains, Spices & Oils</option>
+                <option>💐 Floral & Event Supplies</option>
+                <option>👗 Apparel & Textiles</option>
+                <option>📱 Electronics & Accessories</option>
+                <option>💊 Pharmaceuticals & Healthcare</option>
+                <option>🚗 Auto Parts & Accessories</option>
+                <option>📚 Office & Stationery</option>
+            </select>
+        </div>
+    </section>
+
+    <!-- Quick Access Dashboard -->
+    <div class="grid grid-cols-3 gap-6 p-6">
+        <button onclick="location.href='reorder.html'" class="p-6 bg-white shadow-lg rounded-xl text-center hover:bg-gray-200">
+            <h3 class="text-xl font-semibold">Past orders</h3>
+            <p class="text-gray-700 text-3xl font-bold">8</p>
+        </button>
+        <button onclick="location.href='connection.html'" class="p-6 bg-white shadow-lg rounded-xl text-center hover:bg-gray-200">
+            <h3 class="text-xl font-semibold">Connected Suppliers</h3>
+            <p class="text-gray-700 text-3xl font-bold">3</p>
+        </button>
+        <button onclick="location.href='messages.html'" class="p-6 bg-white shadow-lg rounded-xl text-center hover:bg-gray-200">
+            <h3 class="text-xl font-semibold">New Messages</h3>
+            <p class="text-gray-700 text-3xl font-bold">5</p>
+        </button>
+    </div>
+
+    <!-- Reorder & Inventory Management -->
+    <div class="grid grid-cols-2 gap-6 p-6">
+        <div class="bg-white shadow-lg rounded-xl text-center p-8 hover:bg-gray-200">
+            <h2 class="text-2xl font-bold mb-4">Quick Reordering</h2>
+            <p class="text-gray-600 text-lg mb-4">Reorder essential stock from your trusted suppliers in one click.</p>
+            <button onclick="location.href='InventoryManagement.html'" class="px-8 py-3 bg-green-600 text-white rounded-lg shadow-md hover:bg-green-700 text-lg">Reorder Now</button>
+        </div>
+        <div class="bg-white shadow-lg rounded-xl text-center p-8 hover:bg-gray-200">
+            <h2 class="text-2xl font-bold mb-4">Inventory Management</h2>
+            <p class="text-gray-600 text-lg mb-4">Track stock levels and receive alerts when restocking is needed.</p>
+            <button onclick="location.href='trackraw.html'" class="px-8 py-3 bg-yellow-600 text-white rounded-lg shadow-md hover:bg-yellow-700 text-lg">Manage Inventory</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-teal-700 text-white text-center p-4 mt-6 shadow-md">
+        <p class="text-lg">&copy; 2025 Smart Stocks. All rights reserved.</p>
+    </footer>
+</body>
+</html>

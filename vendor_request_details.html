@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendor Request Details - Smart Stocks</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+
+    <!-- Navbar -->
+    <nav class="bg-teal-700 text-white p-4 flex justify-between items-center shadow-lg">
+        <h1 class="text-2xl font-extrabold">Smart Stocks</h1>
+        <button onclick="location.href='vendorrequests.html'" class="text-lg hover:underline">← Back to Requests</button>
+    </nav>
+
+    <!-- Request Details -->
+    <div class="max-w-4xl mx-auto mt-8 p-6 bg-white shadow-md rounded-lg">
+        <h2 class="text-3xl font-bold text-gray-800">Vendor Request Details</h2>
+        <p class="text-gray-600 mt-2">Detailed information about the vendor's request.</p>
+
+        <div class="mt-6 space-y-4">
+            <!-- Vendor Info -->
+            <div class="p-4 bg-gray-50 shadow-sm rounded-lg">
+                <h3 class="text-xl font-semibold text-gray-800" id="vendor-name"></h3>
+                <p class="text-gray-600" id="vendor-location"></p>
+                <p class="text-gray-600" id="vendor-type"></p>
+            </div>
+
+            <!-- Order Details -->
+            <div class="p-4 bg-gray-50 shadow-sm rounded-lg">
+                <h3 class="text-xl font-semibold text-gray-800">Order Details</h3>
+                <p class="text-gray-600"><strong>Quantity:</strong> <span id="order-quantity"></span></p>
+                <p class="text-gray-600"><strong>Expected Delivery:</strong> <span id="delivery-time"></span></p>
+            </div>
+
+            <!-- Contact Details -->
+            <div class="p-4 bg-gray-50 shadow-sm rounded-lg">
+                <h3 class="text-xl font-semibold text-gray-800">Vendor Contact</h3>
+                <p class="text-gray-600"><strong>Contact Person:</strong> <span id="contact-name"></span></p>
+                <p class="text-gray-600"><strong>Email:</strong> <span id="contact-email"></span></p>
+                <p class="text-gray-600"><strong>Phone:</strong> <span id="contact-phone"></span></p>
+            </div>
+            <!-- Accept & Decline Buttons -->
+<div class="flex space-x-4 mt-4">
+    <button onclick="showPopup('accepted')" class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600">
+        Approve Request
+    </button>
+    <button onclick="showPopup('declined')" class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600">
+        Decline Request
+    </button>
+</div>
+        </div>
+    </div>
+
+    <script>
+        // Sample vendor requests data (simulating dynamic content)
+        const vendorRequests = {
+            "1": {
+                name: "Rahul Traders",
+                location: "West Bengal, India",
+                type: "Bulk supply of grains",
+                quantity: "5,000 kg",
+                delivery: "15 Days",
+                contactName: "Anil Kumar",
+                email: "anil@rahultraders.com",
+                phone: "+91 98765 43210"
+            },
+            "2": {
+                name: "Agarwal Wholesalers",
+                location: "Delhi, India",
+                type: "Bulk supply of spices",
+                quantity: "3,000 kg",
+                delivery: "10 Days",
+                contactName: "Raj Agarwal",
+                email: "raj@agarwalwholesale.com",
+                phone: "+91 98234 56789"
+            },
+            "3": {
+                name: "Singh Enterprises",
+                location: "Punjab, India",
+                type: "Bulk supply of edible oils",
+                quantity: "2,500 liters",
+                delivery: "7 Days",
+                contactName: "Harpreet Singh",
+                email: "harpreet@singhenterprises.com",
+                phone: "+91 98123 45678"
+            },
+            "4": {
+    name: "Golden Grains ENterprise",
+    location: "Maharashtra, India",
+    type: "Bulk supply of pulses",
+    quantity: "4,000 kg",
+    delivery: "12 Days",
+    contactName: "Suresh Verma",
+    email: "suresh@vermadistributors.com",
+    phone: "+91 98901 23456"
+},
+"5": {
+    name: "Sharma & Sons",
+    location: "Rajasthan, India",
+    type: "Bulk supply of dry fruits",
+    quantity: "1,500 kg",
+    delivery: "8 Days",
+    contactName: "Manoj Sharma",
+    email: "manoj@sharmasons.com",
+    phone: "+91 98765 87654"
+},
+"6": {
+    name: "Green Leaf Distributors",
+    location: "Gujarat, India",
+    type: "Bulk supply of tea leaves",
+    quantity: "2,000 kg",
+    delivery: "14 Days",
+    contactName: "Jignesh Patel",
+    email: "jignesh@patelwholesale.com",
+    phone: "+91 98201 34567"
+}
+
+            }
+
+        // Fetch the request ID from the URL (simulating navigation from vendor_requests.html)
+        const urlParams = new URLSearchParams(window.location.search);
+        const requestId = urlParams.get('id');
+
+        if (vendorRequests[requestId]) {
+            document.getElementById('vendor-name').innerText = `Vendor Name: ${vendorRequests[requestId].name}`;
+            document.getElementById('vendor-location').innerText = `Location: ${vendorRequests[requestId].location}`;
+            document.getElementById('vendor-type').innerText = `Request Type: ${vendorRequests[requestId].type}`;
+            document.getElementById('order-quantity').innerText = vendorRequests[requestId].quantity;
+            document.getElementById('delivery-time').innerText = vendorRequests[requestId].delivery;
+            document.getElementById('contact-name').innerText = vendorRequests[requestId].contactName;
+            document.getElementById('contact-email').innerText = vendorRequests[requestId].email;
+            document.getElementById('contact-phone').innerText = vendorRequests[requestId].phone;
+        } else {
+            document.querySelector('.max-w-4xl').innerHTML = "<h2 class='text-2xl font-bold text-red-600'>Invalid Request</h2>";
+        }
+    </script>
+
+
+<!-- Custom Pop-up Modal -->
+<div id="popupModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
+    <div class="bg-white p-6 rounded-lg shadow-lg text-center w-80">
+        <h2 id="popupMessage" class="text-xl font-semibold text-gray-800"></h2>
+        <button onclick="closePopup()" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">
+            OK
+        </button>
+    </div>
+</div>
+
+<!-- JavaScript for Pop-ups -->
+<script>
+    function showPopup(status) {
+        const popupModal = document.getElementById("popupModal");
+        const popupMessage = document.getElementById("popupMessage");
+
+        if (status === "accepted") {
+            popupMessage.innerText = "✅ Request Accepted!";
+            popupMessage.classList.add("text-green-600");
+        } else {
+            popupMessage.innerText = "❌ Request Declined!";
+            popupMessage.classList.add("text-red-600");
+        }
+
+        popupModal.classList.remove("hidden");
+    }
+
+    function closePopup() {
+        document.getElementById("popupModal").classList.add("hidden");
+    }
+</script>
+<footer class="bg-teal-700 text-white text-center p-4 mt-6 shadow-md">
+    <p class="text-lg">&copy; 2025 Smart Stocks. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

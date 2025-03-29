@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover Vendors - Smart Stocks</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 p-6">
+    <nav class="bg-teal-700 text-white p-4 flex justify-between items-center shadow-lg">
+        <h1 class="text-2xl font-extrabold">Smart Stocks</h1>
+        <button onclick="location.href='suphome.html'" class="text-lg hover:underline">← Back to Home</button>
+    </nav>
+    <div class="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-lg">
+        <h2 class="text-2xl font-bold text-center text-teal-600 mb-4">Discover Vendors</h2>
+
+        
+        <!-- Search Filters -->
+        <div class="mb-6 flex flex-col md:flex-row gap-4">
+            <input type="text" placeholder="Search by name or product" class="w-full md:w-1/2 px-4 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-teal-500">
+            <select class="w-full md:w-1/2 px-4 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-teal-500">
+                <option>Search by Location</option>
+                <option>Delhi</option>
+                <option>Mumbai</option>
+                <option>Kolkata</option>
+                <option>Chennai</option>
+                <option>Bangalore</option>
+            </select>
+        </div>
+        
+        <!-- Vendor List -->
+        <div class="grid grid-cols-1 gap-6">
+            <div class="p-4 border rounded-lg shadow-md">
+                <h3 class="font-semibold">Rahul Traders</h3>
+                <p>Location: West Bengal, India</p>
+                <p>Specialization: Bulk supply of grains</p>
+                <div class="mt-4">
+                    <button class="bg-teal-600 text-white px-4 py-2 rounded-lg shadow-md hover:bg-teal-700">Contact</button>
+                </div>
+            </div>
+            <div class="p-4 border rounded-lg shadow-md">
+                <h3 class="font-semibold">Agarwal Wholesalers</h3>
+                <p>Location: Delhi, India</p>
+                <p>Specialization: Bulk supply of spices</p>
+                <div class="mt-4">
+                    <button class="bg-teal-600 text-white px-4 py-2 rounded-lg shadow-md hover:bg-teal-700">Contact</button>
+                </div>
+            </div>
+            <div class="p-4 border rounded-lg shadow-md">
+                <h3 class="font-semibold">Singh Enterprises</h3>
+                <p>Location: Punjab, India</p>
+                <p>Specialization: Bulk supply of edible oils</p>
+                <div class="mt-4">
+                    <button class="bg-teal-600 text-white px-4 py-2 rounded-lg shadow-md hover:bg-teal-700">Contact</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="bg-teal-700 text-white text-center p-4 mt-6 shadow-md">
+        <p class="text-lg">&copy; 2025 Smart Stocks. All rights reserved.</p>
+    </footer>
+</body>
+</html>

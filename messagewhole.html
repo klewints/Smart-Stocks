@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Messages - Smart Stocks</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        function sendMessage(inputId, chatBoxId) {
+            const inputField = document.getElementById(inputId);
+            const chatBox = document.getElementById(chatBoxId);
+            const message = inputField.value.trim();
+            if (message !== "") {
+                const messageBubble = document.createElement("div");
+                messageBubble.className = "bg-blue-100 p-2 rounded-lg mt-2 text-right";
+                messageBubble.textContent = "You: " + message;
+                chatBox.appendChild(messageBubble);
+                inputField.value = "";
+                chatBox.scrollTop = chatBox.scrollHeight;
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 p-6">
+    <h1 class="text-3xl font-bold text-center mb-6">New Messages</h1>
+    <div class="max-w-2xl mx-auto">
+        <div class="bg-white p-4 shadow-lg rounded-lg mb-4">
+            <h2 class="text-lg font-semibold flex items-center">Rahul Traders. <span class="ml-2 text-blue-500">✔</span></h2>
+            <p class="text-gray-600">Hello, 500kg Black pepper available?</p>
+            <div id="chatBox1" class="mt-2"></div>
+            <div class="flex mt-2">
+                <input id="replyInput1" type="text" placeholder="Type a message..." class="flex-1 p-2 border rounded-l-lg">
+                <button onclick="sendMessage('replyInput1', 'chatBox1')" class="bg-blue-600 text-white px-4 rounded-r-lg">➤</button>
+            </div>
+        </div>
+        <div class="bg-white p-4 shadow-lg rounded-lg mb-4">
+            <h2 class="text-lg font-semibold">Agarwal Enterprises</h2>
+            <p class="text-gray-600">Hello, can I know about the rates of Grains at your store?</p>
+            <div id="chatBox2" class="mt-2"></div>
+            <div class="flex mt-2">
+                <input id="replyInput2" type="text" placeholder="Type a message..." class="flex-1 p-2 border rounded-l-lg">
+                <button onclick="sendMessage('replyInput2', 'chatBox2')" class="bg-blue-600 text-white px-4 rounded-r-lg">➤</button>
+            </div>
+        </div>
+        <div class="bg-white p-4 shadow-lg rounded-lg mb-4">
+            <h2 class="text-lg font-semibold flex items-center">Spices World <span class="ml-2 text-blue-500">✔</span></h2>
+            <p class="text-gray-600">Greetings, we have a order for a wedding.</p>
+            <div id="chatBox3" class="mt-2"></div>
+            <div class="flex mt-2">
+                <input id="replyInput3" type="text" placeholder="Type a message..." class="flex-1 p-2 border rounded-l-lg">
+                <button onclick="sendMessage('replyInput3', 'chatBox3')" class="bg-blue-600 text-white px-4 rounded-r-lg">➤</button>
+            </div>
+        </div>
+    </div>
+    <footer class="bg-teal-700 text-white text-center p-4 mt-6 shadow-md">
+        <p class="text-lg">&copy; 2025 Smart Stocks. All rights reserved.</p>
+    </footer>
+</body>
+</html>

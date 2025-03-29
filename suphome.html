@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Stocks - Supplier Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Navbar -->
+    <nav class="bg-teal-700 text-white p-4 flex justify-between items-center shadow-lg">
+        <h1 class="text-2xl font-extrabold">Smart Stocks</h1>
+        <div class="flex space-x-4 items-center">
+            <span class="text-lg">West Bengal, India</span>
+            <span class="cursor-pointer text-xl">▼</span>
+            <input type="text" placeholder="Search..." class="p-2 rounded-md text-black border border-gray-300">
+            <span class="cursor-pointer text-xl" onclick="location.href='messages.html'">🔔</span>
+            <span class="cursor-pointer text-xl" onclick="location.href='supprofile.html'">👤</span>
+        </div>
+    </nav>
+
+    <!-- Welcome Section -->
+    <div class="text-center py-8">
+        <h2 class="text-3xl font-bold text-gray-800">Hello, Merchant!</h2>
+        <p class="text-gray-600 mt-2">Manage your orders, inventory, and connect with vendors seamlessly.</p>
+        <button class="mt-4 bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700">
+            Get Started
+        </button>
+    </div>
+
+    <!-- Dashboard Grid -->
+    <div class="p-6 max-w-5xl mx-auto grid grid-cols-2 gap-6">
+        
+        <!-- Track Orders -->
+        <div class="bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-xl font-semibold mb-3">Track Orders</h2>
+            <button onclick="location.href='trackorders.html'"class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700">View Orders</button>
+        </div>
+
+        <!-- Inventory Management -->
+        <div class="bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-xl font-semibold mb-3">Manage Inventory</h2>
+            <button onclick="location.href='managein.html'"class="w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700">Update Stock</button>
+        </div>
+
+        <!-- Vendor Requests -->
+        <div class="bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-xl font-semibold mb-3">Vendor Requests</h2>
+            <button  onclick="location.href='vendorrequests.html'"class="w-full bg-yellow-500 text-white py-2 rounded-lg hover:bg-yellow-600">View Requests</button>
+        </div>
+
+        <!-- Discover Vendors -->
+        <div class="bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-xl font-semibold mb-3">Discover Vendors</h2>
+            <button onclick="location.href='discovervendor.html'" class="w-full bg-purple-600 text-white py-2 rounded-lg hover:bg-purple-700">Find Vendors</button>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-teal-700 text-white text-center p-4 mt-6 shadow-md">
+        <p class="text-lg">&copy; 2025 Smart Stocks. All rights reserved.</p>
+    </footer>
+</body>
+</html>
