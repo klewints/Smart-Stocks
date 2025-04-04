@@ -25,14 +25,23 @@ Smart Stocks is an *intelligent, cloud-enabled, vendor-supplier ecosystem** desi
 Smart Stocks is engineered using a **modular, scalable architecture**, ensuring optimal performance and maintainability.  
 ### ** Project Structure:**  
 Smart-Stocks/
+
 ├── index.html             # Main Landing Page
+
 ├── login.html             # User Authentication
+
 ├── InventoryManagement.html # Inventory Dashboard
+
 ├── discovervendor.html    # Vendor Discovery Portal
+
 ├── profile.html           # User Profile Management
+
 ├── trackorders.html       # Order Tracking System
+
 ├── assets/                # Images, Icons, and Logos
+
 ├── styles.css             # UI/UX Stylesheet
+
 └── scripts/               # JavaScript Functionalities
 
 ## **Installation & Deployment**  
